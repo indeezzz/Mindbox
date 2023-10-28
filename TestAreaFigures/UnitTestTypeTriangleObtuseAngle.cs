@@ -10,14 +10,14 @@ namespace TestAreaFigures
         {
             Triangle triangle = new Triangle();
             string result = triangle.typeTriangleAtTheCorners(6, 5, 9);
-            Assert.AreEqual("Треугольник тупоугольный", result);
+            Assert.AreEqual("РўСЂРµСѓРіРѕР»СЊРЅРёРє С‚СѓРїРѕСѓРіРѕР»СЊРЅС‹Р№", result);
         }
         [TestMethod]
         public void Test_2()
         {
             Triangle triangle = new Triangle(6, 5, 9);
             string result = triangle.typeTriangleAtTheCorners();
-            Assert.AreEqual("Треугольник тупоугольный", result);
+            Assert.AreEqual("РўСЂРµСѓРіРѕР»СЊРЅРёРє С‚СѓРїРѕСѓРіРѕР»СЊРЅС‹Р№", result);
         }
 
     }
