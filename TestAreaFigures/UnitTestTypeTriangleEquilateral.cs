@@ -11,7 +11,7 @@ namespace TestAreaFigures
         {
             Triangle triangle = new Triangle();
             string result = triangle.typeTriangleOnThSides(8, 8, 8);
-            Assert.AreEqual($"Треугольник равносторонний", result);
+            Assert.AreEqual(($"Треугольник равносторонний"), result);
         }
         [TestMethod]
         public void Test_2()
