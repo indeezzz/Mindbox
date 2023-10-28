@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+п»ї// See https://aka.ms/new-console-template for more information
 
 using GeometryLibrary;
 
@@ -8,3 +8,5 @@ figureCircle.Print();
 Figure figureTriangle = new Triangle(5,12,13);
 figureTriangle.Print();
 
+Triangle triangle = new Triangle(5, 12, 13);
+Console.WriteLine(triangle.typeTriangleAtTheCorners());
