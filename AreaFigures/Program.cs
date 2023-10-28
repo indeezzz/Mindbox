@@ -2,11 +2,9 @@
 
 using GeometryLibrary;
 
-Triangle triangle = new Triangle();
-double a = triangle.C = 5;
-double b= triangle.A = 12;
-double c = triangle.B = 13;
+Figure figureCircle = new Circle(1);
+figureCircle.Print();
 
-triangle.validTriangle(a,b,c);
-Console.WriteLine(triangle.typeTriangle(a, b, c));
+Figure figureTriangle = new Triangle(5,12,13);
+figureTriangle.Print();
 

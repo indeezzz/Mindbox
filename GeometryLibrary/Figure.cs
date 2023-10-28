@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometryLibrary
 {
-    public abstract class Figure
+    public abstract class Figure : IFigure
     {
         protected abstract string FigureName { get; }
         public abstract double Perimeter();
@@ -15,10 +15,6 @@ namespace GeometryLibrary
         {
             Console.WriteLine($"Периметр {FigureName.ToLower()}а: {Perimeter()}");
             Console.WriteLine($"Площадь {FigureName.ToLower()}а: {Area()}");
-        }
-
-        public Figure()
-        {
         }
     }
 }
