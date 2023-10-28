@@ -1,4 +1,4 @@
-﻿namespace GeometryLibrary
+п»їnamespace GeometryLibrary
 {
     public class Triangle : Figure
     {
@@ -54,11 +54,11 @@
             }
         }
 
-        protected override string FigureName => "Треугольник";
+        protected override string FigureName => "РўСЂРµСѓРіРѕР»СЊРЅРёРє";
         /// <summary>
-        /// Вычисление периметра треугольника
+        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         /// </summary>
-        /// <returns>Вывод периметра в формате double</returns>
+        /// <returns>Р’С‹РІРѕРґ РїРµСЂРёРјРµС‚СЂР° РІ С„РѕСЂРјР°С‚Рµ double</returns>
         public override double Perimeter()
         {
             _perimeterTriangle = (A + B + C) / 2;
@@ -66,9 +66,9 @@
         }
 
         /// <summary>
-        /// Вычисление площади треугольника
+        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         /// </summary>
-        /// <returns>Вывод площади в формате double</returns>
+        /// <returns>Р’С‹РІРѕРґ РїР»РѕС‰Р°РґРё РІ С„РѕСЂРјР°С‚Рµ double</returns>
         public override double Area()
         {
             _perimeterTriangle = Perimeter();
@@ -77,95 +77,95 @@
         }
 
         /// <summary>
-        /// Существует ли треугольник с задаными сторонами 
+        /// РЎСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё С‚СЂРµСѓРіРѕР»СЊРЅРёРє СЃ Р·Р°РґР°РЅС‹РјРё СЃС‚РѕСЂРѕРЅР°РјРё 
         /// </summary>
-        /// <param name="a">Длина стороны АB</param>
-        /// <param name="b">Длина стороны BC</param>
-        /// <param name="c">Длина стороны AC</param>
-        /// <returns>Возвращает значение true/false</returns>      
+        /// <param name="a">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ РђB</param>
+        /// <param name="b">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ BC</param>
+        /// <param name="c">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ AC</param>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ true/false</returns>      
         public bool validTriangle(double a, double b, double c)
         {
             return a + b > c && a + c > b && c + b > a ? true : false;
         }
         /// <summary>
-        /// Существует ли данный треугольник 
+        /// РЎСѓС‰РµСЃС‚РІСѓРµС‚ Р»Рё РґР°РЅРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє 
         /// </summary>
-        /// <returns>Возвращает значение true/false</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ true/false</returns>
         public bool validTriangle()
         {
             return A + B > C && A + C > B && C + B > A ? true : false;
         }
 
         /// <summary>
-        /// Определение вида треугольника с параметрами по углам
+        /// РћРїСЂРµРґРµР»РµРЅРёРµ РІРёРґР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃ РїР°СЂР°РјРµС‚СЂР°РјРё РїРѕ СѓРіР»Р°Рј
         /// </summary>
-        /// <returns>Возвращает название треугольника в формате string</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string</returns>
         public string typeTriangleAtTheCorners(double a, double b, double c)
         {
             switch (validTriangle(a, b, c) && c > a && c > b)
             {
                 case true when (Math.Pow(c, 2) > Math.Pow(a, 2) + Math.Pow(b, 2)):
-                    return $"{FigureName} тупоугольный";
+                    return $"{FigureName} С‚СѓРїРѕСѓРіРѕР»СЊРЅС‹Р№";
                 case true when (Math.Pow(c, 2) == Math.Pow(a, 2) + Math.Pow(b, 2)):
-                    return $"{FigureName} прямоугольный";
+                    return $"{FigureName} РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№";
                 case true when (Math.Pow(c, 2) < Math.Pow(a, 2) + Math.Pow(b, 2)):
-                    return $"{FigureName} остроугольный";
+                    return $"{FigureName} РѕСЃС‚СЂРѕСѓРіРѕР»СЊРЅС‹Р№";
                 default:
-                    return $"Треугольник не классифицируется по типу углов";
+                    return $"РўСЂРµСѓРіРѕР»СЊРЅРёРє РЅРµ РєР»Р°СЃСЃРёС„РёС†РёСЂСѓРµС‚СЃСЏ РїРѕ С‚РёРїСѓ СѓРіР»РѕРІ";
             }
         }
         /// <summary>
-        /// Определение вида треугольника по углам
+        /// РћРїСЂРµРґРµР»РµРЅРёРµ РІРёРґР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РїРѕ СѓРіР»Р°Рј
         /// </summary>
-        /// <returns>Возвращает название треугольника в формате string</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string</returns>
         public string typeTriangleAtTheCorners()
         {
             switch (validTriangle(A, B, C) && C > A && C > B)
             {
                 case true when (Math.Pow(C, 2) > Math.Pow(A, 2) + Math.Pow(B, 2)):
-                    return $"{FigureName} тупоугольный";
+                    return $"{FigureName} С‚СѓРїРѕСѓРіРѕР»СЊРЅС‹Р№";
                 case true when (Math.Pow(C, 2) == Math.Pow(A, 2) + Math.Pow(B, 2)):
-                    return $"{FigureName} прямоугольный";
+                    return $"{FigureName} РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№";
                 case true when (Math.Pow(C, 2) < Math.Pow(A, 2) + Math.Pow(B, 2)):
-                    return $"{FigureName} остроугольный";
+                    return $"{FigureName} РѕСЃС‚СЂРѕСѓРіРѕР»СЊРЅС‹Р№";
                 default:
-                    return $"Треугольник не классифицируется по типу углов";
+                    return $"РўСЂРµСѓРіРѕР»СЊРЅРёРє РЅРµ РєР»Р°СЃСЃРёС„РёС†РёСЂСѓРµС‚СЃСЏ РїРѕ С‚РёРїСѓ СѓРіР»РѕРІ";
             }
         }
         /// <summary>
-        /// Определение вида треугольника по сторонам
+        /// РћРїСЂРµРґРµР»РµРЅРёРµ РІРёРґР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РїРѕ СЃС‚РѕСЂРѕРЅР°Рј
         /// </summary>
-        /// <returns>Возвращает название треугольника в формате string</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string</returns>
         public string typeTriangleOnThSides()
         {
             switch (validTriangle(A, B, C))
             {
                 case true when (A == B && A == C):
-                    return $"{FigureName} равносторонний";
+                    return $"{FigureName} СЂР°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№";
                 case true when (A == B):
-                    return $"{FigureName} равнобедренный";
+                    return $"{FigureName} СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№";
                 case true when (A != B && A != C):
-                    return $"{FigureName} разносторонний";
+                    return $"{FigureName} СЂР°Р·РЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№";
                 default:
-                    return $"Треугольник с такими параметрами не существует";
+                    return $"РўСЂРµСѓРіРѕР»СЊРЅРёРє СЃ С‚Р°РєРёРјРё РїР°СЂР°РјРµС‚СЂР°РјРё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚";
             }
         }
         /// <summary>
-        /// Определение вида треугольника по сторонам с задаными параметрами
+        /// РћРїСЂРµРґРµР»РµРЅРёРµ РІРёРґР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РїРѕ СЃС‚РѕСЂРѕРЅР°Рј СЃ Р·Р°РґР°РЅС‹РјРё РїР°СЂР°РјРµС‚СЂР°РјРё
         /// </summary>
-        /// <returns>Возвращает название треугольника в формате string</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string</returns>
         public string typeTriangleOnThSides(double a, double b, double c)
         {
             switch(validTriangle(a, b, c))
             {
                 case true when (a == b && a == c): 
-                    return $"{FigureName} равносторонний";  
+                    return $"{FigureName} СЂР°РІРЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№";  
                 case true when (a == b):
-                    return $"{FigureName} равнобедренный";
+                    return $"{FigureName} СЂР°РІРЅРѕР±РµРґСЂРµРЅРЅС‹Р№";
                 case true when (a != b && a != c):
-                    return $"{FigureName} разносторонний";
+                    return $"{FigureName} СЂР°Р·РЅРѕСЃС‚РѕСЂРѕРЅРЅРёР№";
                 default: 
-                    return $"Треугольник с такими параметрами не существует";
+                    return $"РўСЂРµСѓРіРѕР»СЊРЅРёРє СЃ С‚Р°РєРёРјРё РїР°СЂР°РјРµС‚СЂР°РјРё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚";
             }
         }
         public Triangle()

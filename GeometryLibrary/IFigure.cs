@@ -1,4 +1,4 @@
-﻿namespace GeometryLibrary
+п»їnamespace GeometryLibrary
 
 {
     interface IFigure

@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+п»їusing Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using GeometryLibrary;
 

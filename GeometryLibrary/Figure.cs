@@ -1,4 +1,4 @@
-﻿using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,8 @@ namespace GeometryLibrary
         public abstract double Area();
         public virtual void Print()
         {
-            Console.WriteLine($"Периметр {FigureName.ToLower()}а: {Perimeter()}");
-            Console.WriteLine($"Площадь {FigureName.ToLower()}а: {Area()}");
+            Console.WriteLine($"РџРµСЂРёРјРµС‚СЂ {FigureName.ToLower()}Р°: {Perimeter()}");
+            Console.WriteLine($"РџР»РѕС‰Р°РґСЊ {FigureName.ToLower()}Р°: {Area()}");
         }
     }
 }
