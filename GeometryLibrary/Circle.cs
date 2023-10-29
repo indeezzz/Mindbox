@@ -27,7 +27,7 @@
         }
         protected override string FigureName => "РљСЂСѓРі";
         /// <summary>
-        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° РєСЂСѓРіР°.
+        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° РєСЂСѓРіР°
         /// </summary>
         /// <returns>Р’С‹РІРѕРґ РїРµСЂРјРёРµС‚СЂР° РІ С„РѕСЂРјР°С‚Рµ double </returns>
         public override double Perimeter()
@@ -36,7 +36,7 @@
             return _perimeterCircle;
         }
         /// <summary>
-        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё РєСЂСѓРіР°.
+        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё РєСЂСѓРіР°
         /// </summary>
         /// <returns>Р’С‹РІРѕРґ РїР»РѕС‰Р°РґРё РІ С„РѕСЂРјР°С‚Рµ double</returns>
         public override double Area()
