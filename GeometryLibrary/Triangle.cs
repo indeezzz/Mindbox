@@ -58,7 +58,7 @@
         /// <summary>
         /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         /// </summary>
-        /// <returns>Р’С‹РІРѕРґ РїРµСЂРёРјРµС‚СЂР° РІ С„РѕСЂРјР°С‚Рµ double</returns>
+        /// <returns>Р’С‹РІРѕРґ РїРµСЂРёРјРµС‚СЂР° РІ С„РѕСЂРјР°С‚Рµ double </returns>
         public override double Perimeter()
         {
             _perimeterTriangle = (A + B + C) / 2;
@@ -68,7 +68,7 @@
         /// <summary>
         /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
         /// </summary>
-        /// <returns>Р’С‹РІРѕРґ РїР»РѕС‰Р°РґРё РІ С„РѕСЂРјР°С‚Рµ double</returns>
+        /// <returns>Р’С‹РІРѕРґ РїР»РѕС‰Р°РґРё РІ С„РѕСЂРјР°С‚Рµ double </returns>
         public override double Area()
         {
             _perimeterTriangle = Perimeter();
@@ -82,7 +82,7 @@
         /// <param name="a">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ РђB</param>
         /// <param name="b">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ BC</param>
         /// <param name="c">Р”Р»РёРЅР° СЃС‚РѕСЂРѕРЅС‹ AC</param>
-        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ true/false</returns>      
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ true/false </returns>      
         public bool validTriangle(double a, double b, double c)
         {
             return a + b > c && a + c > b && c + b > a ? true : false;
@@ -99,7 +99,7 @@
         /// <summary>
         /// РћРїСЂРµРґРµР»РµРЅРёРµ РІРёРґР° С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃ РїР°СЂР°РјРµС‚СЂР°РјРё РїРѕ СѓРіР»Р°Рј
         /// </summary>
-        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string</returns>
+        /// <returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅР°Р·РІР°РЅРёРµ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° РІ С„РѕСЂРјР°С‚Рµ string </returns>
         public string typeTriangleAtTheCorners(double a, double b, double c)
         {
             switch (validTriangle(a, b, c) && c > a && c > b)
