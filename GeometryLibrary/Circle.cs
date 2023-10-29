@@ -1,4 +1,4 @@
-п»їnamespace GeometryLibrary
+﻿namespace GeometryLibrary
 {
     public class Circle : Figure
     {
@@ -25,20 +25,20 @@
                 }               
             }
         }
-        protected override string FigureName => "РљСЂСѓРі";
+        protected override string FigureName => "Круг";
         /// <summary>
-        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїРµСЂРёРјРµС‚СЂР° РєСЂСѓРіР°
+        /// Вычисление периметра круга
         /// </summary>
-        /// <returns>Р’С‹РІРѕРґ РїРµСЂРјРёРµС‚СЂР° РІ С„РѕСЂРјР°С‚Рµ double </returns>
+        /// <returns>Вывод пермиетра в формате double</returns>
         public override double Perimeter()
         {
             _perimeterCircle = 2 * _pi * R;
             return _perimeterCircle;
         }
         /// <summary>
-        /// Р’С‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё РєСЂСѓРіР°
+        /// Вычисление площади круга
         /// </summary>
-        /// <returns>Р’С‹РІРѕРґ РїР»РѕС‰Р°РґРё РІ С„РѕСЂРјР°С‚Рµ double </returns>
+        /// <returns>Вывод площади в формате double</returns>
         public override double Area()
         {
             _areaCircle = _pi * Math.Pow(R, 2);
