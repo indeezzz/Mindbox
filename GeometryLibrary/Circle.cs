@@ -1,4 +1,6 @@
-﻿namespace GeometryLibrary
+﻿using System.Data;
+
+namespace GeometryLibrary
 {
     public class Circle : Figure
     {
@@ -15,15 +17,19 @@
             }
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
-                    _r = value * -1;
+                    throw new Exception($"Радиус окружности не может быть отрицательным или равен 0");
                 }
                 else
                 {
                     _r = value;
                 }               
             }
+        }
+        public bool validCircle(double r)
+        {
+            return r > 0 ? true : false;
         }
         protected override string FigureName => "Круг";
         /// <summary>
@@ -41,16 +47,24 @@
         /// <returns>Вывод площади в формате double</returns>
         public override double Area()
         {
-            _areaCircle = _pi * Math.Pow(R, 2);
+            _areaCircle = _pi * (R * R);
             return _areaCircle;
         }
         public Circle()
         {
-            _r = 1;
+            
         }
         public Circle(double r)
         {
-            R = r;
+            if (validCircle(r))
+            {
+                R = r;
+            }
+            else
+            {
+                throw new Exception($"Окружности с заданным ридусом не существует");
+            }
+
         }
     }
 }

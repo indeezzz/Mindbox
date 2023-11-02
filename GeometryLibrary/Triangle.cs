@@ -15,7 +15,7 @@
             {
                 if (value < 0)
                 {
-                    _a = value * -1;
+                    throw new Exception($"Длина стороны A треугольника не может быть отрицательна или равна 0");
                 }
                 else
                 {
@@ -30,7 +30,7 @@
             {
                 if (value < 0)
                 {
-                    _b = value * -1;
+                    throw new Exception($"Длина стороны B треугольника не может быть отрицательна или равна 0");
                 }
                 else
                 {
@@ -43,9 +43,9 @@
             get { return _c; }
             set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
-                    _c = value * -1;
+                    throw new Exception($"Длина стороны C треугольника не может быть отрицательна или равна 0");
                 }
                 else
                 {
@@ -88,27 +88,18 @@
             return a + b > c && a + c > b && c + b > a ? true : false;
         }
         /// <summary>
-        /// Существует ли данный треугольник 
-        /// </summary>
-        /// <returns>Возвращает значение true/false</returns>
-        public bool validTriangle()
-        {
-            return A + B > C && A + C > B && C + B > A ? true : false;
-        }
-
-        /// <summary>
         /// Определение вида треугольника с параметрами по углам
         /// </summary>
         /// <returns>Возвращает название треугольника в формате string</returns>
         public string typeTriangleAtTheCorners(double a, double b, double c)
         {
-            switch (validTriangle(a, b, c) && c > a && c > b)
+            switch (true)
             {
-                case true when (Math.Pow(c, 2) > Math.Pow(a, 2) + Math.Pow(b, 2)):
+                case true when ((c * c) > (a * a) + (b * b)):
                     return $"{FigureName} тупоугольный";
-                case true when (Math.Pow(c, 2) == Math.Pow(a, 2) + Math.Pow(b, 2)):
+                case true when ((c * c) == (a * a) + (b * b)):
                     return $"{FigureName} прямоугольный";
-                case true when (Math.Pow(c, 2) < Math.Pow(a, 2) + Math.Pow(b, 2)):
+                case true when ((c * c) < (a * a) + (b * b)):
                     return $"{FigureName} остроугольный";
                 default:
                     return $"Треугольник не классифицируется по типу углов";
@@ -120,13 +111,13 @@
         /// <returns>Возвращает название треугольника в формате string</returns>
         public string typeTriangleAtTheCorners()
         {
-            switch (validTriangle(A, B, C) && C > A && C > B)
+            switch (true)
             {
-                case true when (Math.Pow(C, 2) > Math.Pow(A, 2) + Math.Pow(B, 2)):
+                case true when ((C * C) > (A * A) + (B * B)):
                     return $"{FigureName} тупоугольный";
-                case true when (Math.Pow(C, 2) == Math.Pow(A, 2) + Math.Pow(B, 2)):
+                case true when ((C * C) == (A * A) + (B * B)):
                     return $"{FigureName} прямоугольный";
-                case true when (Math.Pow(C, 2) < Math.Pow(A, 2) + Math.Pow(B, 2)):
+                case true when ((C * C) < (A * A) + (B * B)):
                     return $"{FigureName} остроугольный";
                 default:
                     return $"Треугольник не классифицируется по типу углов";
@@ -138,7 +129,7 @@
         /// <returns>Возвращает название треугольника в формате string</returns>
         public string typeTriangleOnThSides()
         {
-            switch (validTriangle(A, B, C))
+            switch (true)
             {
                 case true when (A == B && A == C):
                     return $"{FigureName} равносторонний";
@@ -156,7 +147,7 @@
         /// <returns>Возвращает название треугольника в формате string</returns>
         public string typeTriangleOnThSides(double a, double b, double c)
         {
-            switch(validTriangle(a, b, c))
+            switch(true)
             {
                 case true when (a == b && a == c): 
                     return $"{FigureName} равносторонний";  
@@ -170,15 +161,20 @@
         }
         public Triangle()
         {
-            A = 1;
-            B = 1;
-            C = 1;
+
         }
         public Triangle(double a, double b, double c)
         {
-            A = a;
-            B = b;
-            C = c;
+            if(validTriangle(a,b,c))
+            {
+                _a = a;
+                _b = b;
+                _c = c;
+            }
+            else
+            {
+                throw new Exception("Треугольника с такими длинами не существует");
+            }
         }
     }
 }
